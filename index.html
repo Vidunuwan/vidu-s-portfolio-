@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Umayanga Vidunuwan Dissanayake | Software Engineer</title>
-  <meta name="description" content="Backend engineer building production travel-technology platforms in Laravel, Node.js, PostgreSQL and Redis, and leading MCP server architecture and LLM agent systems in production." />
+  <meta name="description" content="Backend engineer building production travel-technology platforms in Laravel, Node.js, PostgreSQL and Redis, and building MCP servers and LLM agent systems in production." />
   <meta name="theme-color" content="#0a0f1c" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Umayanga Vidunuwan Dissanayake | Software Engineer" />
@@ -54,7 +54,7 @@
         <div class="hero-copy no-hit">
           <p class="kicker">Software engineer · <span data-tenure="long">3 yrs 11 mo</span> · Nugegoda, LK</p>
           <h1>I build travel platforms, and the AI agents that run&nbsp;them.</h1>
-          <p class="lede">Backend engineer in Laravel, Node.js, PostgreSQL and Redis. I lead MCP server architecture and LLM agent systems in production: agents that book flights over WhatsApp, chase suppliers by voice and email, and turn contract files into database rows.</p>
+          <p class="lede">Backend engineer in Laravel, Node.js, PostgreSQL and Redis. I design and build MCP servers and LLM agent systems in production: agents that book flights over WhatsApp, chase suppliers by voice and email, and turn contract files into database rows.</p>
           <div class="ctas">
             <a href="#work" class="btn btn-primary">See selected systems
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -65,11 +65,11 @@
 
         <div class="hero-visual">
           <!-- Static diagram: shown when WebGL is unavailable or reduced motion is on -->
-          <figure class="hero-fallback" aria-label="Diagram of the agent platform I lead">
-            <figcaption><span>fig.01 · the agent platform I lead</span><span class="amber">● prod</span></figcaption>
+          <figure class="hero-fallback" aria-label="Diagram of the agent platform I build on">
+            <figcaption><span>fig.01 · the agent platform I build on</span><span class="amber">● prod</span></figcaption>
             <div class="dg-row dg-4"><span>WhatsApp</span><span>Email</span><span>Voice</span><span>Web chat</span></div>
             <i class="dg-link"></i>
-            <div class="dg-core"><strong>Agent core + MCP server</strong><span>4 isolated agents · 47 tools</span></div>
+            <div class="dg-core"><strong>Agent core + MCP server</strong><span>isolated agents · tool calling · shared state</span></div>
             <i class="dg-link"></i>
             <div class="dg-row dg-4"><span>B2B ticketing</span><span>Supplier inventory</span><span>Booking app</span><span>Finance</span></div>
             <i class="dg-link amber-link"></i>
@@ -82,13 +82,34 @@
       </div>
     </section>
 
-    <!-- METRICS -->
-    <section class="metrics" data-graph="dim" aria-label="Highlights">
-      <div class="container metrics-grid">
-        <div class="metric"><span class="metric-n" data-tenure="short">3y 11m</span><span class="metric-l">building production software</span></div>
-        <div class="metric"><span class="metric-n">4</span><span class="metric-l">production platforms owned end to end</span></div>
-        <div class="metric"><span class="metric-n accent">47</span><span class="metric-l">agent tools across 4 isolated agents</span></div>
-        <div class="metric"><span class="metric-n">150+</span><span class="metric-l">travel agents on the platform I built</span></div>
+    <!-- SCOPE: what I own today -->
+    <section class="scope" data-graph="dim" aria-labelledby="scope-title">
+      <div class="container">
+        <div class="scope-grid">
+          <h2 class="scope-title" id="scope-title">What I own today</h2>
+          <div class="scope-item">
+            <h3>AI engineering</h3>
+            <p>Design and build <strong>MCP servers and LLM agent systems</strong>, taking them from proposal to production across 3 platforms.</p>
+          </div>
+          <div class="scope-item">
+            <h3>Platforms</h3>
+            <p>Own <strong>4 production platforms</strong> end to end, including a B2B ticketing platform used by <strong>150+ live travel agents</strong>.</p>
+          </div>
+          <div class="scope-item">
+            <h3>Integrations</h3>
+            <p>Hotel, attraction and travel <strong>supplier APIs across REST and SOAP</strong>, plus WhatsApp, Microsoft Graph and voice channels for the agents.</p>
+          </div>
+          <div class="scope-item">
+            <h3>Team</h3>
+            <p>Code review, releases across development, staging and production, and technical guidance for junior developers.</p>
+          </div>
+        </div>
+        <div class="integrations">
+          <span class="integrations-label">works with</span>
+          <ul>
+            <li>RateHawk</li><li>TBO</li><li>Bridgify</li><li>GlobalTix</li><li>Meta Business API</li><li>Microsoft Graph</li><li>ElevenLabs</li><li>OpenAI</li><li>Firebase</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -128,8 +149,8 @@
             <div class="case-meta"><span>SYS‑03</span><span>travel platform · white‑label</span></div>
             <h3>B2B ticketing platform</h3>
             <dl class="case-body">
-              <div><dt>Problem</dt><dd>One platform had to serve more than 150 travel agents and several branded operators.</dd></div>
-              <div><dt>What I built</dt><dd>Led its conversion to white‑label from a single codebase. Booking flows across flights, hotels, attractions and insurance on 7 supplier APIs, a multi‑product cart, a digital wallet with payment‑gateway settlement, and role‑based access for agents, agency admins and back office.</dd></div>
+              <div><dt>Problem</dt><dd>One platform had to serve several branded operators, with more than 150 live travel agents actively using it.</dd></div>
+              <div><dt>What I built</dt><dd>Led its conversion to white‑label from a single codebase. Booking flows across flights, hotels, attractions and insurance on top of the company's existing supplier integrations, a multi‑product cart, a digital wallet with payment‑gateway settlement, and role‑based access for agents, agency admins and back office.</dd></div>
               <div><dt>Also</dt><dd>Real‑time admin‑to‑agent messaging on Socket.IO, and inbound email monitoring through Microsoft Graph webhooks with Azure AD app registration.</dd></div>
             </dl>
             <ul class="tags"><li>Laravel</li><li>Node.js</li><li>Socket.IO</li><li>PostgreSQL</li></ul>
@@ -171,7 +192,7 @@
         <div class="about-text">
           <p class="eyebrow">03 / about</p>
           <h2>Backend first, now building the agents on top</h2>
-          <p>I've spent <span data-tenure="words">3 years 11 months</span> in production engineering, almost all of it in travel technology at Apple Holidays Destination Services. I joined as a junior engineer in 2023, and today I own four production platforms end to end and lead the company's AI engineering work.</p>
+          <p>I've spent <span data-tenure="words">3 years 11 months</span> in production engineering, almost all of it in travel technology at Apple Holidays Destination Services. I joined as a junior engineer in 2023, and today I own four production platforms end to end and help build the company's AI agent systems.</p>
           <p>Most of my work sits where systems meet: multi‑supplier integrations across REST and SOAP, queues and background jobs, caching, query optimisation and indexing, and the retry and idempotency handling that agent tool calls need in production. I also review code, run releases across development, staging and production, and guide junior developers.</p>
           <dl class="facts">
             <div><dt>Education</dt><dd>BSc (Hons) Software Engineering, University of Kelaniya</dd></div>
@@ -196,7 +217,7 @@
               <h3>Software Engineer</h3>
               <p class="log-co">Apple Holidays Destination Services · Colombo</p>
               <ul>
-                <li>Lead the company's AI engineering work, taking MCP server architecture and LLM agent systems from proposal to production across 3 platforms: 4 isolated agents and 47 exposed tools.</li>
+                <li>Design and build MCP servers and LLM agent systems as part of the company's AI engineering work, taking them from proposal to production across 3 platforms.</li>
                 <li>Operate the agent platform in production: retry and idempotency for tool calls, conversation state across channels, failure isolation between agents, and memory and cost tuning.</li>
                 <li>Design and maintain backend services across Laravel, Node.js, React, PostgreSQL and Redis: REST APIs, background jobs, caching, real‑time services and high‑throughput data processing.</li>
                 <li>Own 4 production platforms end to end, from requirements and architecture through release and post‑deployment support.</li>
