@@ -14,31 +14,37 @@ const labelLayer = document.getElementById('graph-labels');
 const tip = document.getElementById('graph-tip');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+/* Layers: 0 channels · 1 agent core · 2 platforms · 3 infrastructure · 4 data & external services */
 const NODES = [
-  { id: 'web', label: 'Web · React', layer: 0, desc: 'Admin dashboards and booking front ends in React, MUI and CoreUI, with role-based access.' },
-  { id: 'mobile', label: 'iOS / Android', layer: 0, desc: 'Mobile apps signing in with Google, Apple, phone or password.' },
-  { id: 'partner', label: 'Supplier APIs', layer: 0, desc: 'Hotel and attraction suppliers pulled into one tourism inventory.' },
-  { id: 'api', label: 'API layer', layer: 1, desc: 'Laravel REST APIs behind a Sanctum and JWT hybrid, built for web and mobile.' },
-  { id: 'booking', label: 'Booking engine', layer: 2, desc: 'Flight booking with void, refund and reissue flows, dynamic invoices and passenger age rules.' },
-  { id: 'discount', label: 'Discount rules', layer: 2, desc: 'Stacked rules: per-user and total limits, booking and travel date windows, supplier filters.' },
-  { id: 'realtime', label: 'Realtime', layer: 2, desc: 'Socket.IO move sync for a multiplayer card game, and Firestore rooms for a 3-way chat.' },
-  { id: 'notify', label: 'Notifications', layer: 2, desc: 'Real-time push notifications for bookings and messages.' },
-  { id: 'queue', label: 'Queues & jobs', layer: 3, infra: true, desc: 'Background jobs for invoices, emails and supplier sync, so requests stay fast.' },
-  { id: 'cache', label: 'Cache', layer: 3, infra: true, desc: 'Cached hot reads such as availability and pricing lookups.' },
-  { id: 'mysql', label: 'MySQL', layer: 4, desc: 'Tuned queries and indexes. API responses got 40% faster.' },
-  { id: 's3', label: 'AWS S3', layer: 4, desc: 'File uploads through FilePond straight into S3.' },
-  { id: 'gds', label: 'SOAP · airlines', layer: 4, desc: 'Legacy airline systems over SOAP for live availability and ticketing.' },
-  { id: 'firebase', label: 'Firebase', layer: 4, desc: 'Firestore for live chat, search and instant updates.' }
+  { id: 'whatsapp', label: 'WhatsApp', layer: 0, desc: 'Agents and suppliers reach the system over WhatsApp through the Meta Business API.' },
+  { id: 'email', label: 'Email', layer: 0, desc: 'Inbound email monitored through Microsoft Graph webhooks with Azure AD app registration.' },
+  { id: 'voice', label: 'Voice', layer: 0, desc: 'AI voice calls with ElevenLabs that collect supplier rates and chase missing details.' },
+  { id: 'web', label: 'Web chat · portal', layer: 0, desc: 'Agent portal and web chat used by more than 150 travel agents.' },
+  { id: 'agent', label: 'Agent core', layer: 1, desc: 'Shared Node.js agent core running 4 isolated agents with permission boundaries and failure isolation.' },
+  { id: 'mcp', label: 'MCP server', layer: 1, desc: 'In-house MCP server exposing 47 tools: flight search, fare comparison, booking and post-booking changes.' },
+  { id: 'ticketing', label: 'B2B ticketing', layer: 2, desc: 'White-label platform for flights, hotels, attractions and insurance, with cart, wallet and role-based access.' },
+  { id: 'inventory', label: 'Supplier inventory', layer: 2, desc: 'Central inventory fed by a supplier outreach agent and a contract document-ingestion agent.' },
+  { id: 'booking', label: 'Booking app', layer: 2, desc: 'Customer-facing app: search, booking flows and cart across every product type.' },
+  { id: 'finance', label: 'Finance & reports', layer: 2, desc: 'Receivables, payables, cash flow and P&L with Excel and PDF output, replacing a manual monthly process.' },
+  { id: 'queue', label: 'Queues & jobs', layer: 3, infra: true, desc: 'Background jobs for order workflows and notifications, with retry and idempotency handling.' },
+  { id: 'redis', label: 'Redis', layer: 3, infra: true, desc: 'Caching and fast state, alongside query optimisation, indexing and batch processing.' },
+  { id: 'postgres', label: 'PostgreSQL', layer: 4, desc: 'Primary data store for the platforms and the agent system.' },
+  { id: 'suppliers', label: 'Supplier APIs', layer: 4, desc: '7 supplier APIs over REST and SOAP, including RateHawk, TBO, Bridgify and GlobalTix.' },
+  { id: 'openai', label: 'OpenAI', layer: 4, desc: 'Tool calling and structured outputs for the agents and for contract extraction.' },
+  { id: 'firebase', label: 'Firebase', layer: 4, desc: 'Three-way real-time chat between admins, customers and suppliers, plus notifications.' }
 ];
 
 const EDGES = [
-  ['web', 'api'], ['mobile', 'api'], ['api', 'partner'], ['api', 'booking'], ['api', 'discount'], ['api', 'realtime'], ['api', 'notify'],
-  ['booking', 'discount'], ['booking', 'queue'], ['notify', 'queue'], ['booking', 'gds'], ['booking', 'mysql'], ['discount', 'mysql'],
-  ['discount', 'cache'], ['booking', 'cache'], ['queue', 'mysql'], ['queue', 's3'], ['realtime', 'firebase'], ['notify', 'firebase'], ['web', 's3']
+  ['whatsapp', 'agent'], ['email', 'agent'], ['voice', 'agent'], ['web', 'agent'], ['web', 'ticketing'],
+  ['agent', 'mcp'], ['agent', 'openai'], ['agent', 'redis'],
+  ['mcp', 'ticketing'], ['mcp', 'inventory'], ['mcp', 'booking'],
+  ['ticketing', 'finance'], ['ticketing', 'queue'], ['inventory', 'queue'], ['booking', 'queue'],
+  ['ticketing', 'suppliers'], ['booking', 'suppliers'], ['inventory', 'postgres'], ['ticketing', 'postgres'],
+  ['finance', 'postgres'], ['booking', 'redis'], ['queue', 'postgres'], ['queue', 'firebase'], ['inventory', 'firebase']
 ];
 
 const LAYER_Y = [2.75, 1.35, 0, -1.3, -2.65];
-const LAYER_R = [2.3, 0, 2.8, 1.15, 2.6];
+const LAYER_R = [2.5, 0.95, 2.8, 1.15, 2.6];
 const WIDE = 960;
 
 if (canvas && !reduceMotion) {
@@ -84,14 +90,14 @@ async function start() {
   });
   const byId = Object.fromEntries(NODES.map((n) => [n.id, n]));
 
-  const colorOf = (n) => (n.id === 'api' ? 0x5eead4 : n.infra ? 0xfbbf24 : n.layer === 2 ? 0xe6edf7 : 0x8e9bb3);
+  const colorOf = (n) => (n.layer === 1 ? 0x5eead4 : n.infra ? 0xfbbf24 : n.layer === 2 ? 0xe6edf7 : 0x8e9bb3);
   const sphere = new THREE.SphereGeometry(1, 24, 16);
   const hitMat = new THREE.MeshBasicMaterial({ transparent: true, opacity: 0, depthWrite: false });
   const hitMeshes = [];
 
   NODES.forEach((n) => {
     const color = new THREE.Color(colorOf(n));
-    n.size = n.id === 'api' ? 0.3 : 0.16;
+    n.size = n.layer === 1 ? 0.26 : 0.16;
     n.cur = n.size;
     n.mesh = new THREE.Mesh(sphere, new THREE.MeshBasicMaterial({ color }));
     n.mesh.scale.setScalar(n.size);

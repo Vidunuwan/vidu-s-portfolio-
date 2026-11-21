@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Umayanga Vidunuwan | Software Engineer</title>
-  <meta name="description" content="Umayanga Vidunuwan, software engineer with nearly four years building Laravel and Node.js backends: booking platforms, rule engines, real-time systems and API integrations." />
+  <title>Umayanga Vidunuwan Dissanayake | Software Engineer</title>
+  <meta name="description" content="Backend engineer building production travel-technology platforms in Laravel, Node.js, PostgreSQL and Redis, and leading MCP server architecture and LLM agent systems in production." />
   <meta name="theme-color" content="#0a0f1c" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Umayanga Vidunuwan | Software Engineer" />
-  <meta property="og:description" content="Backend systems for bookings, payments and real-time products. Laravel, Node.js and API architecture." />
+  <meta property="og:title" content="Umayanga Vidunuwan Dissanayake | Software Engineer" />
+  <meta property="og:description" content="Travel platforms, and the AI agents that run them. Laravel, Node.js, MCP and LLM agent systems in production." />
   <meta property="og:url" content="https://vidunuwan.github.io/vidu-s-portfolio-/" />
   <meta property="og:image" content="https://vidunuwan.github.io/vidu-s-portfolio-/my-pic.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,8 +53,8 @@
       <div class="container hero-grid">
         <div class="hero-copy no-hit">
           <p class="kicker">Software engineer · <span data-tenure="long">3 yrs 11 mo</span> · Nugegoda, LK</p>
-          <h1>I build the backend systems behind bookings, payments and real&#8209;time products.</h1>
-          <p class="lede">Laravel and Node.js engineer focused on API architecture, complex business rules and integrations with legacy systems, from SOAP airline platforms to Firebase and AWS. I mentor developers and lead the technical discussions on how systems should be shaped.</p>
+          <h1>I build travel platforms, and the AI agents that run&nbsp;them.</h1>
+          <p class="lede">Backend engineer in Laravel, Node.js, PostgreSQL and Redis. I lead MCP server architecture and LLM agent systems in production: agents that book flights over WhatsApp, chase suppliers by voice and email, and turn contract files into database rows.</p>
           <div class="ctas">
             <a href="#work" class="btn btn-primary">See selected systems
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -65,17 +65,17 @@
 
         <div class="hero-visual">
           <!-- Static diagram: shown when WebGL is unavailable or reduced motion is on -->
-          <figure class="hero-fallback" aria-label="Diagram of a typical system I own">
-            <figcaption><span>fig.01 · shape of a system I own</span><span class="amber">● prod</span></figcaption>
-            <div class="dg-row dg-3"><span>Web · React</span><span>iOS / Android</span><span>Supplier APIs</span></div>
+          <figure class="hero-fallback" aria-label="Diagram of the agent platform I lead">
+            <figcaption><span>fig.01 · the agent platform I lead</span><span class="amber">● prod</span></figcaption>
+            <div class="dg-row dg-4"><span>WhatsApp</span><span>Email</span><span>Voice</span><span>Web chat</span></div>
             <i class="dg-link"></i>
-            <div class="dg-core"><strong>API layer</strong><span>Laravel · Sanctum / JWT</span></div>
+            <div class="dg-core"><strong>Agent core + MCP server</strong><span>4 isolated agents · 47 tools</span></div>
             <i class="dg-link"></i>
-            <div class="dg-row dg-3"><span>Booking engine</span><span>Discount rules</span><span>Realtime</span></div>
+            <div class="dg-row dg-4"><span>B2B ticketing</span><span>Supplier inventory</span><span>Booking app</span><span>Finance</span></div>
             <i class="dg-link amber-link"></i>
-            <div class="dg-infra">queues · jobs · cache</div>
+            <div class="dg-infra">queues · jobs · retry &amp; idempotency · Redis</div>
             <i class="dg-link amber-link"></i>
-            <div class="dg-row dg-4 dg-data"><span>MySQL</span><span>AWS S3</span><span>SOAP / GDS</span><span>Firebase</span></div>
+            <div class="dg-row dg-4 dg-data"><span>PostgreSQL</span><span>Supplier APIs</span><span>OpenAI</span><span>Firebase</span></div>
           </figure>
           <p class="graph-hint">Hover or tap a node to see what I built there</p>
         </div>
@@ -85,10 +85,10 @@
     <!-- METRICS -->
     <section class="metrics" data-graph="dim" aria-label="Highlights">
       <div class="container metrics-grid">
-        <div class="metric"><span class="metric-n" data-tenure="short">3y 11m</span><span class="metric-l">shipping to production</span></div>
-        <div class="metric"><span class="metric-n accent">−40%</span><span class="metric-l">API response times after query &amp; API tuning</span></div>
-        <div class="metric"><span class="metric-n">15+</span><span class="metric-l">systems &amp; products delivered</span></div>
-        <div class="metric"><span class="metric-n">Intern → SE</span><span class="metric-l">in two years, now mentoring others</span></div>
+        <div class="metric"><span class="metric-n" data-tenure="short">3y 11m</span><span class="metric-l">building production software</span></div>
+        <div class="metric"><span class="metric-n">4</span><span class="metric-l">production platforms owned end to end</span></div>
+        <div class="metric"><span class="metric-n accent">47</span><span class="metric-l">agent tools across 4 isolated agents</span></div>
+        <div class="metric"><span class="metric-n">150+</span><span class="metric-l">travel agents on the platform I built</span></div>
       </div>
     </section>
 
@@ -97,52 +97,58 @@
       <div class="container">
         <div class="section-head no-hit">
           <p class="eyebrow">02 / selected systems</p>
-          <h2>Problems I've owned end to end</h2>
-          <p class="section-sub">Each one as a short case study: the constraint, what I built, and what changed. The graph follows along.</p>
+          <h2>Systems I've taken from proposal to production</h2>
+          <p class="section-sub">Built at Apple Holidays Destination Services. Each one as a short case study; the graph follows along.</p>
         </div>
 
         <div class="cases">
-          <article class="case no-hit" data-node="booking">
-            <div class="case-meta"><span>SYS‑01</span><span>travel · payments · Apple Holidays</span></div>
-            <h3>Flight booking platform</h3>
+          <article class="case no-hit" data-node="mcp">
+            <div class="case-meta"><span>SYS‑01</span><span>AI engineering · MCP</span></div>
+            <h3>Conversational booking over MCP</h3>
             <dl class="case-body">
-              <div><dt>Constraint</dt><dd>Airline inventory lives in legacy systems that only speak SOAP, and any booking can later be voided, refunded or reissued.</dd></div>
-              <div><dt>What I built</dt><dd>Architected the platform in Laravel: reservation workflows, payment processing, dynamic invoices and passenger age rules for adults, children and infants. Node.js services handle real‑time availability and event processing.</dd></div>
-              <div><dt>Outcome</dt><dd>The full booking lifecycle, search to reissue, in one system.</dd></div>
+              <div><dt>Problem</dt><dd>Travel agents had to click through the portal for every flight search, fare comparison, booking and post‑booking change.</dd></div>
+              <div><dt>What I built</dt><dd>An in‑house MCP server exposing the full system surface as agent tools, on a shared Node.js agent core with isolated agent contexts and permission boundaries, reached over WhatsApp, email, voice and web chat.</dd></div>
+              <div><dt>In production</dt><dd>Retry and idempotency for tool calls, conversation state persisted across channels, failure isolation between agents, and memory and cost tuning on constrained infrastructure.</dd></div>
             </dl>
-            <ul class="tags"><li>Laravel</li><li>SOAP</li><li>Node.js</li><li>Payments</li><li>MySQL</li></ul>
+            <ul class="tags"><li>Node.js</li><li>MCP</li><li>OpenAI</li><li>Laravel</li><li>Redis</li></ul>
           </article>
 
-          <article class="case no-hit" data-node="discount">
-            <div class="case-meta"><span>SYS‑02</span><span>pricing · rules</span></div>
-            <h3>Discount rule engine</h3>
+          <article class="case no-hit" data-node="inventory">
+            <div class="case-meta"><span>SYS‑02</span><span>AI engineering · automation</span></div>
+            <h3>Autonomous supplier outreach &amp; ingestion</h3>
             <dl class="case-body">
-              <div><dt>Constraint</dt><dd>Promotions had to combine per‑user and total usage limits, booking and travel date windows, and product, city and supplier filters.</dd></div>
-              <div><dt>What I built</dt><dd>A rule model evaluated dynamically per booking, with limit tracking and configuration from the admin side.</dd></div>
-              <div><dt>Outcome</dt><dd>New promotions are set up as rules, not new code.</dd></div>
+              <div><dt>Problem</dt><dd>Supplier rates and contract details were collected by hand, then typed into the inventory system.</dd></div>
+              <div><dt>What I built</dt><dd>An outreach agent that contacts suppliers by AI voice call (ElevenLabs), WhatsApp (Meta Business API) and email (Microsoft Graph), collects rates and contract details, and chases what's missing. A document‑ingestion agent parses arbitrary contract files and writes products and rates to the database.</dd></div>
+              <div><dt>Outcome</dt><dd>Rates sync live to the booking platforms, with no manual collection or data entry.</dd></div>
             </dl>
-            <ul class="tags"><li>Laravel</li><li>MySQL</li><li>Domain modelling</li></ul>
+            <ul class="tags"><li>Laravel</li><li>MCP</li><li>ElevenLabs</li><li>WhatsApp API</li><li>MS Graph</li></ul>
           </article>
 
-          <article class="case no-hit" data-node="realtime">
-            <div class="case-meta"><span>SYS‑03</span><span>realtime</span></div>
-            <h3>Real‑time messaging &amp; play</h3>
+          <article class="case no-hit" data-node="ticketing">
+            <div class="case-meta"><span>SYS‑03</span><span>travel platform · white‑label</span></div>
+            <h3>B2B ticketing platform</h3>
             <dl class="case-body">
-              <div><dt>Constraint</dt><dd>Three parties needed one live conversation, and a card game needed every player's moves in sync.</dd></div>
-              <div><dt>What I built</dt><dd>A 3‑way chat on Firestore with secure room‑based messaging and live search, real‑time push notifications, and a Node.js + Socket.IO server for lobbies and move sync.</dd></div>
-              <div><dt>Outcome</dt><dd>Instant updates across web and mobile.</dd></div>
+              <div><dt>Problem</dt><dd>One platform had to serve more than 150 travel agents and several branded operators.</dd></div>
+              <div><dt>What I built</dt><dd>Led its conversion to white‑label from a single codebase. Booking flows across flights, hotels, attractions and insurance on 7 supplier APIs, a multi‑product cart, a digital wallet with payment‑gateway settlement, and role‑based access for agents, agency admins and back office.</dd></div>
+              <div><dt>Also</dt><dd>Real‑time admin‑to‑agent messaging on Socket.IO, and inbound email monitoring through Microsoft Graph webhooks with Azure AD app registration.</dd></div>
             </dl>
-            <ul class="tags"><li>Node.js</li><li>Socket.IO</li><li>Firebase</li><li>Push</li></ul>
+            <ul class="tags"><li>Laravel</li><li>Node.js</li><li>Socket.IO</li><li>PostgreSQL</li></ul>
           </article>
         </div>
 
         <div class="also no-hit">
           <p class="eyebrow">also shipped</p>
           <div class="also-grid">
-            <div class="also-item" data-node="api"><h4>Mobile app backend</h4><p>Google, Apple, phone and password sign‑in behind a JWT + Sanctum hybrid, with modular booking, profile and notification APIs.</p></div>
-            <div class="also-item" data-node="web"><h4>Admin dashboard</h4><p>React with CoreUI and MUI, Spatie role permissions, live data tables with WebDataRocks and Tabulator.</p></div>
-            <div class="also-item" data-node="partner"><h4>Tourism inventory</h4><p>Hotel and attraction supplier APIs pulled into one inventory system.</p></div>
-            <div class="also-item" data-node="mysql"><h4>E‑commerce personalisation</h4><p>Recommendations from user behaviour, social signals for new users, and trending items.</p></div>
+            <div class="also-item" data-node="booking"><h4>Customer booking app</h4><p>Main backend engineer: search, booking flows and cart across all product types, on RateHawk and TBO for hotels and Bridgify and GlobalTix for attractions, over REST and SOAP.</p></div>
+            <div class="also-item" data-node="finance"><h4>Financial reporting</h4><p>Receivables, payables, cash flow and profit‑and‑loss with Excel and PDF output, replacing a manual monthly process.</p></div>
+            <div class="also-item" data-node="queue"><h4>Order workflow automation</h4><p>Order acceptance, cancellation, refund, voucher and supplier‑confirmation flows, with notifications through Firebase, email, WhatsApp and background jobs.</p></div>
+            <div class="also-item" data-node="firebase"><h4>Three‑way real‑time chat</h4><p>Administrators, customers and suppliers in one live conversation on Firebase.</p></div>
+          </div>
+
+          <p class="eyebrow" style="margin-top: 24px">personal projects</p>
+          <div class="also-grid">
+            <div class="also-item" data-node="openai"><h4>Natural language → SQL</h4><p>A service that turns plain‑English questions into SQL through an MCP server, demonstrated on a seeded e‑commerce schema.</p><ul class="tags"><li>Node.js</li><li>MCP</li><li>OpenAI</li><li>PostgreSQL</li></ul></div>
+            <div class="also-item"><h4>Budget tracker</h4><p>An Android app where an LLM agent reads transaction SMS, categorises spending by merchant and date, and syncs analytics to Google Sheets.</p><ul class="tags"><li>Kotlin</li><li>OpenAI</li><li>Room</li><li>Sheets API</li></ul></div>
           </div>
         </div>
       </div>
@@ -151,15 +157,27 @@
     <!-- ABOUT -->
     <section id="about" class="section about" data-graph="dim">
       <div class="container about-grid">
-        <div class="about-photo">
-          <img src="my-pic.jpg" alt="Portrait of Umayanga Vidunuwan" width="420" height="525" loading="lazy" />
-        </div>
+        <figure class="portrait">
+          <div class="portrait-plate" aria-hidden="true"></div>
+          <picture>
+            <source srcset="images/me-cutout.webp" type="image/webp" />
+            <img src="images/me-cutout.png" alt="Umayanga Vidunuwan Dissanayake at his graduation" width="773" height="1100" loading="lazy" />
+          </picture>
+          <figcaption class="portrait-tag">
+            <span class="mono accent">BSc (Hons) Software Engineering</span>
+            <span>University of Kelaniya · 2020–2024</span>
+          </figcaption>
+        </figure>
         <div class="about-text">
           <p class="eyebrow">03 / about</p>
-          <h2>Backend first, with an eye for the whole product</h2>
-          <p>I've spent <span data-tenure="words">3 years 11 months</span> in production engineering, mostly in travel tech. My days are REST APIs for web and mobile, authentication, booking and pricing logic, and integrations with whatever a supplier or airline happens to run.</p>
-          <p>I care about the parts users never see: queues and jobs that keep requests fast, caching, indexes, and clean deployments on Nginx and Google Cloud. On the front end I work in React with Material UI and CoreUI.</p>
-          <p class="muted">Off screen: chess, mathematics and competitive games.</p>
+          <h2>Backend first, now building the agents on top</h2>
+          <p>I've spent <span data-tenure="words">3 years 11 months</span> in production engineering, almost all of it in travel technology at Apple Holidays Destination Services. I joined as a junior engineer in 2023, and today I own four production platforms end to end and lead the company's AI engineering work.</p>
+          <p>Most of my work sits where systems meet: multi‑supplier integrations across REST and SOAP, queues and background jobs, caching, query optimisation and indexing, and the retry and idempotency handling that agent tool calls need in production. I also review code, run releases across development, staging and production, and guide junior developers.</p>
+          <dl class="facts">
+            <div><dt>Education</dt><dd>BSc (Hons) Software Engineering, University of Kelaniya</dd></div>
+            <div><dt>A/L</dt><dd>Combined Mathematics A · District Rank 2, Kurunegala</dd></div>
+            <div><dt>Off screen</dt><dd>Chess, mathematics and competitive games</dd></div>
+          </dl>
         </div>
       </div>
     </section>
@@ -173,31 +191,41 @@
         </div>
         <ol class="log">
           <li class="log-item">
-            <div class="log-date"><span class="accent">2025.01 — present</span><span>HEAD</span></div>
+            <div class="log-date"><span class="accent">2025.12 — present</span><span>HEAD</span></div>
             <div class="log-body">
               <h3>Software Engineer</h3>
-              <p class="log-co">Apple Holidays Destination Services</p>
+              <p class="log-co">Apple Holidays Destination Services · Colombo</p>
               <ul>
-                <li>Architected the flight booking platform in Laravel, covering reservations and payment processing.</li>
-                <li>Integrated SOAP APIs with legacy airline systems for real‑time availability.</li>
-                <li>Added AI‑assisted search recommendations and dynamic pricing.</li>
-                <li>Built Node.js microservices for real‑time event processing.</li>
-                <li>Cut API response times by 40% through query and API optimisation.</li>
-                <li>Lead technical discussions and mentor junior developers on architecture.</li>
+                <li>Lead the company's AI engineering work, taking MCP server architecture and LLM agent systems from proposal to production across 3 platforms: 4 isolated agents and 47 exposed tools.</li>
+                <li>Operate the agent platform in production: retry and idempotency for tool calls, conversation state across channels, failure isolation between agents, and memory and cost tuning.</li>
+                <li>Design and maintain backend services across Laravel, Node.js, React, PostgreSQL and Redis: REST APIs, background jobs, caching, real‑time services and high‑throughput data processing.</li>
+                <li>Own 4 production platforms end to end, from requirements and architecture through release and post‑deployment support.</li>
+                <li>Review code, manage releases across development, staging and production, and guide junior developers.</li>
               </ul>
             </div>
           </li>
           <li class="log-item">
-            <div class="log-date"><span>2023.08 — 2024.12</span></div>
+            <div class="log-date"><span>2024.10 — 2025.12</span></div>
             <div class="log-body">
               <h3>Associate Software Engineer</h3>
-              <p class="log-co">Apple Holidays Destination Services</p>
+              <p class="log-co">Apple Holidays Destination Services · Colombo</p>
               <ul>
-                <li>Built Laravel REST APIs across several products.</li>
-                <li>Integrated hotel and attraction supplier APIs.</li>
-                <li>Built an inventory management system for tourism.</li>
-                <li>Delivered real‑time push notifications and a 3‑way chat.</li>
-                <li>Owned pull request merges and Git practices for the team.</li>
+                <li>Owned supplier, hotel, ticketing, order‑management, finance and reporting modules end to end, serving more than 150 travel agents.</li>
+                <li>Built financial reporting for receivables, payables, cash flow and profit‑and‑loss with Excel and PDF output, replacing a manual monthly process.</li>
+                <li>Automated order acceptance, cancellation, refund, voucher and supplier‑confirmation workflows, with notifications via Firebase, email, WhatsApp and background jobs.</li>
+                <li>Cut report‑generation and search response times through query optimisation, indexing, caching and batch processing.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="log-item">
+            <div class="log-date"><span>2023.08 — 2024.10</span></div>
+            <div class="log-body">
+              <h3>Junior Software Engineer</h3>
+              <p class="log-co">Apple Holidays Destination Services · Colombo</p>
+              <ul>
+                <li>Built features across hotel, lifestyle, education, product, supplier, order, driver and vehicle modules in Laravel, MySQL, Blade, Livewire and jQuery.</li>
+                <li>Delivered dashboards, data tables, filters, reports and admin interfaces with authentication, authorisation, validation, PDF generation and Excel export.</li>
+                <li>Developed inventory, rate‑management, booking and order‑management features, and resolved defects through testing, deployment and production releases.</li>
               </ul>
             </div>
           </li>
@@ -205,11 +233,9 @@
             <div class="log-date"><span>2023.01 — 2023.08</span></div>
             <div class="log-body">
               <h3>Intern Software Engineer</h3>
-              <p class="log-co">Block Stars (Pvt) Ltd</p>
+              <p class="log-co">Block‑Stars (Pvt) Ltd</p>
               <ul>
-                <li>Full‑stack Laravel apps with jQuery and AJAX.</li>
-                <li>Stripe payments and OpenAI integrations.</li>
-                <li>Database design, stand‑ups, sprint planning and code reviews.</li>
+                <li>Built and enhanced Laravel web applications as part of a development team, through the full lifecycle from requirements to delivery.</li>
               </ul>
             </div>
           </li>
@@ -225,12 +251,12 @@
           <h2>Tools I reach for</h2>
         </div>
         <div class="stack-grid">
-          <div class="stack-cell"><h3>Backend</h3><p>Laravel · Node.js · REST · Sanctum / JWT · Queues &amp; jobs</p></div>
-          <div class="stack-cell"><h3>Data &amp; cloud</h3><p>MySQL · query tuning · AWS S3 · Google Cloud · Nginx · CI/CD</p></div>
-          <div class="stack-cell"><h3>Realtime &amp; integrations</h3><p>Socket.IO · Firebase · SOAP · Stripe · OpenAI</p></div>
-          <div class="stack-cell"><h3>Frontend</h3><p>React · Material UI · CoreUI · Tailwind CSS</p></div>
-          <div class="stack-cell"><h3>Languages</h3><p>PHP · JavaScript · Python · Java · C# · C</p></div>
-          <div class="stack-cell"><h3>Tools</h3><p>Git · Postman · Debugging · Unreal Engine 5</p></div>
+          <div class="stack-cell stack-wide"><h3>AI engineering &amp; automation</h3><p>LLM agent architecture and orchestration · multi‑agent systems with isolated contexts and permission boundaries · MCP tool server design · tool calling · structured outputs · conversation state and context‑window management · prompt design · document parsing and extraction · voice agents (ElevenLabs) · OpenAI API · WhatsApp, email and voice automation</p></div>
+          <div class="stack-cell"><h3>Architecture</h3><p>Microservices · event‑driven design · domain‑driven design · REST · SOAP · real‑time systems · queues &amp; background jobs · retry &amp; idempotency</p></div>
+          <div class="stack-cell"><h3>Frameworks</h3><p>Laravel · Livewire · Node.js · React · Next.js</p></div>
+          <div class="stack-cell"><h3>Databases &amp; caching</h3><p>PostgreSQL · MySQL · MongoDB · Redis</p></div>
+          <div class="stack-cell"><h3>Languages</h3><p>PHP · JavaScript · Python · SQL</p></div>
+          <div class="stack-cell"><h3>Infrastructure &amp; testing</h3><p>Docker · Nginx · AWS · CI/CD · Git · Postman · PHPUnit</p></div>
         </div>
       </div>
     </section>
@@ -241,8 +267,8 @@
         <div class="contact-panel">
           <div class="contact-copy">
             <p class="eyebrow">06 / contact</p>
-            <h2>Have a system that needs to hold up under load?</h2>
-            <p class="muted">I'm open to senior backend and API engineering conversations.</p>
+            <h2>Need a platform, or agents that run one?</h2>
+            <p class="muted">I'm open to senior backend and AI engineering conversations.</p>
           </div>
           <ul class="contact-links">
             <li>
@@ -260,7 +286,7 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <span>© <span id="year">2026</span> Umayanga Vidunuwan</span>
+      <span>© <span id="year">2026</span> Umayanga Vidunuwan Dissanayake</span>
       <span>Nugegoda, Sri Lanka · built with three.js</span>
     </div>
   </footer>

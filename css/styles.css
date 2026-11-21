@@ -209,15 +209,54 @@ h2 { font-size: clamp(30px, 3.6vw, 44px); line-height: 1.1; }
 .also-item.is-focus { background: rgba(20, 34, 52, 0.96); }
 .also-item h4 { font-size: 17px; }
 .also-item p { font-size: 14px; line-height: 1.6; color: var(--muted); }
+.also-item .tags { margin-top: 6px; }
 
 /* ---------- About ---------- */
 .about-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
-.about-photo { position: relative; max-width: 420px; }
-.about-photo::after { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 1px solid var(--accent); border-radius: var(--radius); z-index: -1; }
-.about-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: var(--radius); filter: grayscale(0.35) contrast(1.05); }
+
+/* Portrait: cut-out figure standing on a blueprint plate, head breaking out of the frame */
+.portrait { position: relative; width: 100%; max-width: 440px; margin: 0; padding-top: 48px; isolation: isolate; }
+.portrait-plate {
+  position: absolute; left: 0; right: 0; bottom: 0; top: 28%;
+  border: 1px solid var(--line-2); border-radius: 16px; z-index: -1; overflow: hidden;
+  background-color: #111b30;
+  background-image:
+    radial-gradient(circle at 50% 18%, rgba(94, 234, 212, 0.22), rgba(94, 234, 212, 0) 55%),
+    linear-gradient(rgba(94, 234, 212, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 234, 212, 0.07) 1px, transparent 1px);
+  background-size: auto, 24px 24px, 24px 24px;
+}
+.portrait-plate::before {
+  content: ""; position: absolute; left: 50%; top: -38%; width: 92%; aspect-ratio: 1;
+  transform: translateX(-50%); border-radius: 50%; border: 1px dashed rgba(94, 234, 212, 0.35);
+}
+.portrait-plate::after {
+  content: ""; position: absolute; inset: 12px; border-radius: 10px; border: 1px solid rgba(94, 234, 212, 0.18);
+}
+.portrait picture { display: block; }
+.portrait img {
+  width: 86%; margin: 0 auto; height: auto;
+  border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;
+  filter: drop-shadow(0 0 1px rgba(94, 234, 212, 0.55)) drop-shadow(0 24px 40px rgba(0, 0, 0, 0.45));
+  -webkit-mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 82%, transparent 100%);
+}
+.portrait-tag {
+  position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%);
+  width: max-content; max-width: calc(100% - 32px);
+  display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center;
+  padding: 10px 16px; border-radius: 10px; border: 1px solid var(--line-2);
+  background: rgba(10, 15, 28, 0.88); font-size: 13px; color: var(--muted);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.portrait-tag .mono { font-size: 12px; }
+
 .about-text { display: flex; flex-direction: column; gap: 18px; }
 .about-text p { font-size: 16px; line-height: 1.75; color: var(--fg-2); max-width: 62ch; }
-.about-text p.muted { color: var(--muted); }
+.facts { display: flex; flex-direction: column; margin-top: 8px; border-top: 1px solid var(--line); max-width: 62ch; }
+.facts div { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--line); }
+.facts dt { font-family: var(--font-mono); font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.04em; padding-top: 2px; }
+.facts dd { font-size: 15px; color: var(--fg-2); }
 
 /* ---------- Experience ---------- */
 .log { border-top: 1px solid var(--line); }
@@ -232,6 +271,8 @@ h2 { font-size: clamp(30px, 3.6vw, 44px); line-height: 1.1; }
 /* ---------- Stack ---------- */
 .stack-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .stack-cell { background: var(--bg-2); padding: 24px; }
+.stack-wide { grid-column: 1 / -1; }
+.stack-wide p { max-width: 110ch; }
 .stack-cell h3 { font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dim); margin-bottom: 12px; }
 .stack-cell p { font-size: 15px; line-height: 1.8; }
 
@@ -268,7 +309,7 @@ h2 { font-size: clamp(30px, 3.6vw, 44px); line-height: 1.1; }
   .metric:nth-child(3) { border-left: 0; padding-left: 0; }
   .metric:nth-child(n + 3) { border-top: 1px solid var(--line); }
   .about-grid { grid-template-columns: minmax(0, 1fr); }
-  .about-photo { max-width: 320px; }
+  .portrait { max-width: 360px; }
   .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -292,6 +333,8 @@ h2 { font-size: clamp(30px, 3.6vw, 44px); line-height: 1.1; }
   .case-body div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
   .also-grid, .stack-grid { grid-template-columns: minmax(0, 1fr); }
   .log-item { grid-template-columns: minmax(0, 1fr); }
+  .facts div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .dg-4 span { font-size: 10px; padding: 8px 2px; }
   .metric { padding: 24px 12px; }
   .metric:nth-child(odd) { padding-left: 0; }
   .dg-row span { font-size: 12px; padding: 8px 4px; }
