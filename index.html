@@ -4,586 +4,268 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Umayanga Vidunuwan | Software Engineer</title>
-  <meta name="description" content="Portfolio of Umayanga Vidunuwan - Software Engineer specializing in Laravel, Node.js and API Engineering." />
+  <meta name="description" content="Umayanga Vidunuwan, software engineer with nearly four years building Laravel and Node.js backends: booking platforms, rule engines, real-time systems and API integrations." />
+  <meta name="theme-color" content="#0a0f1c" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Umayanga Vidunuwan | Software Engineer" />
+  <meta property="og:description" content="Backend systems for bookings, payments and real-time products. Laravel, Node.js and API architecture." />
+  <meta property="og:url" content="https://vidunuwan.github.io/vidu-s-portfolio-/" />
+  <meta property="og:image" content="https://vidunuwan.github.io/vidu-s-portfolio-/my-pic.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- CURSOR GLOW -->
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <!-- 3D system graph (fixed behind the page; enhanced by js/system-graph.js) -->
+  <canvas id="graph" class="graph-layer" aria-hidden="true"></canvas>
+  <div id="graph-labels" class="graph-layer graph-labels" aria-hidden="true"></div>
+  <div id="graph-tip" class="graph-tip" aria-hidden="true" hidden><strong></strong><span></span></div>
 
-  <!-- SCROLL PROGRESS -->
-  <div class="scroll-progress" id="scrollProgress"></div>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- PARTICLE CANVAS -->
-  <canvas id="particleCanvas"></canvas>
-
-  <!-- NAVIGATION -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#home" class="nav-logo">
-        <span class="logo-bracket">&lt;</span>UV<span class="logo-bracket"> /&gt;</span>
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>umayanga.vidunuwan</span>
       </a>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
-        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
-        <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
-        <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
-        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
-        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
-      </ul>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <span></span><span></span>
       </button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#work">/systems</a>
+        <a href="#about">/about</a>
+        <a href="#experience">/experience</a>
+        <a href="#stack">/stack</a>
+        <a href="#contact" class="nav-cta">/contact →</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="hero-terminal">
-      <div class="terminal-bar">
-        <span class="terminal-dot red"></span>
-        <span class="terminal-dot yellow"></span>
-        <span class="terminal-dot green"></span>
-        <span class="terminal-title">umayanga@portfolio:~</span>
-      </div>
-      <div class="terminal-body">
-        <p class="terminal-line"><span class="prompt">$</span> <span class="cmd">cat</span> intro.txt</p>
-        <div class="terminal-output">
-          <h1 class="glitch" data-text="Umayanga Vidunuwan">Umayanga Vidunuwan</h1>
-          <p class="hero-role" id="heroRole"></p>
-        </div>
-        <p class="terminal-line"><span class="prompt">$</span> <span class="cmd">echo</span> "Building scalable backends, real-time systems &amp; modern web experiences."</p>
-        <p class="terminal-line highlight-line">Specializing in Laravel, Node.js &amp; API Engineering.</p>
-        <p class="terminal-line"><span class="prompt">$</span> <span id="blinkCursor" class="blink-cursor">_</span></p>
-      </div>
-    </div>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
-      <a href="#projects" class="btn btn-outline"><i class="fas fa-code-branch"></i> View My Work</a>
-    </div>
-    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
-      <div class="mouse"><div class="wheel"></div></div>
-    </a>
-  </section>
+  <main id="main">
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="section-header">
-      <span class="section-number">01</span>
-      <h2 class="section-title">About Me</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="about-grid">
-      <div class="about-photo-wrapper reveal-left">
-        <div class="about-photo-border"></div>
-        <img src="my-pic.jpg" alt="Umayanga Vidunuwan" class="about-photo" />
-      </div>
-      <div class="about-text reveal-right">
-        <p>I am a <strong>Software Engineer</strong> with <strong>2+ years</strong> of professional experience, specializing in backend development and API engineering. I build secure, scalable systems using <strong>Laravel</strong>, <strong>Node.js</strong>, and modern JavaScript frameworks, with a strong focus on clean architecture, performance, and reliability.</p>
-        <p>My work spans across developing REST APIs for mobile and web apps, implementing JWT/Sanctum authentication, building real-time chat and game systems, handling complex booking &amp; discount logic, and integrating external services such as Firebase, AWS S3, and various third-party APIs.</p>
-        <p>I have hands-on experience with queues, jobs, caching, database optimization, and production deployments on Nginx and Google Cloud. I also work with <strong>React</strong>, Core UI, and Material UI to create modern, responsive interfaces.</p>
-        <p>Outside of coding, I enjoy mathematics, playing chess, and exploring competitive video games.</p>
-        <div class="about-stats">
-          <div class="stat-item">
-            <span class="stat-number" data-count="2">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Years Exp.</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="15">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Projects</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number" data-count="6">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Languages</span>
+    <!-- HERO -->
+    <section id="top" class="hero" data-graph="hero" data-graph-hit>
+      <div class="container hero-grid">
+        <div class="hero-copy no-hit">
+          <p class="kicker">Software engineer · <span data-tenure="long">3 yrs 11 mo</span> · Nugegoda, LK</p>
+          <h1>I build the backend systems behind bookings, payments and real&#8209;time products.</h1>
+          <p class="lede">Laravel and Node.js engineer focused on API architecture, complex business rules and integrations with legacy systems, from SOAP airline platforms to Firebase and AWS. I mentor developers and lead the technical discussions on how systems should be shaped.</p>
+          <div class="ctas">
+            <a href="#work" class="btn btn-primary">See selected systems
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="mailto:uvidunuwan@gmail.com" class="btn btn-ghost mono">uvidunuwan@gmail.com</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="section-header">
-      <span class="section-number">02</span>
-      <h2 class="section-title">Technical Skills</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="skills-container">
-      <div class="skill-category reveal-up">
-        <div class="skill-icon-wrap"><i class="fas fa-code"></i></div>
-        <h3>Languages</h3>
-        <div class="skill-pills">
-          <span class="pill">PHP</span>
-          <span class="pill">JavaScript</span>
-          <span class="pill">Python</span>
-          <span class="pill">Java</span>
-          <span class="pill">C#</span>
-          <span class="pill">C</span>
+        <div class="hero-visual">
+          <!-- Static diagram: shown when WebGL is unavailable or reduced motion is on -->
+          <figure class="hero-fallback" aria-label="Diagram of a typical system I own">
+            <figcaption><span>fig.01 · shape of a system I own</span><span class="amber">● prod</span></figcaption>
+            <div class="dg-row dg-3"><span>Web · React</span><span>iOS / Android</span><span>Supplier APIs</span></div>
+            <i class="dg-link"></i>
+            <div class="dg-core"><strong>API layer</strong><span>Laravel · Sanctum / JWT</span></div>
+            <i class="dg-link"></i>
+            <div class="dg-row dg-3"><span>Booking engine</span><span>Discount rules</span><span>Realtime</span></div>
+            <i class="dg-link amber-link"></i>
+            <div class="dg-infra">queues · jobs · cache</div>
+            <i class="dg-link amber-link"></i>
+            <div class="dg-row dg-4 dg-data"><span>MySQL</span><span>AWS S3</span><span>SOAP / GDS</span><span>Firebase</span></div>
+          </figure>
+          <p class="graph-hint">Hover or tap a node to see what I built there</p>
         </div>
       </div>
-      <div class="skill-category reveal-up">
-        <div class="skill-icon-wrap"><i class="fas fa-server"></i></div>
-        <h3>Backend</h3>
-        <div class="skill-pills">
-          <span class="pill">Laravel</span>
-          <span class="pill">Node.js</span>
-          <span class="pill">REST APIs</span>
-          <span class="pill">Sanctum / JWT</span>
-          <span class="pill">Queues &amp; Jobs</span>
-          <span class="pill">MySQL</span>
-          <span class="pill">DB Optimization</span>
-        </div>
-      </div>
-      <div class="skill-category reveal-up">
-        <div class="skill-icon-wrap"><i class="fas fa-cloud"></i></div>
-        <h3>Cloud &amp; DevOps</h3>
-        <div class="skill-pills">
-          <span class="pill">AWS S3</span>
-          <span class="pill">Google Cloud</span>
-          <span class="pill">Nginx</span>
-          <span class="pill">GitHub CI/CD</span>
-          <span class="pill">Deployment</span>
-        </div>
-      </div>
-      <div class="skill-category reveal-up">
-        <div class="skill-icon-wrap"><i class="fas fa-laptop-code"></i></div>
-        <h3>Frontend</h3>
-        <div class="skill-pills">
-          <span class="pill">React.js</span>
-          <span class="pill">Material UI</span>
-          <span class="pill">CoreUI</span>
-          <span class="pill">Tailwind CSS</span>
-          <span class="pill">Real-time UI</span>
-        </div>
-      </div>
-      <div class="skill-category reveal-up">
-        <div class="skill-icon-wrap"><i class="fas fa-bolt"></i></div>
-        <h3>Real-Time &amp; Integrations</h3>
-        <div class="skill-pills">
-          <span class="pill">Socket.IO</span>
-          <span class="pill">Firebase</span>
-          <span class="pill">FilePond + S3</span>
-          <span class="pill">Payments</span>
-          <span class="pill">Live Updates</span>
-        </div>
-      </div>
-      <div class="skill-category reveal-up">
-        <div class="skill-icon-wrap"><i class="fas fa-wrench"></i></div>
-        <h3>Tools &amp; Other</h3>
-        <div class="skill-pills">
-          <span class="pill">Git</span>
-          <span class="pill">Postman</span>
-          <span class="pill">Debugging</span>
-          <span class="pill">Unreal Engine 5</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section">
-    <div class="section-header">
-      <span class="section-number">03</span>
-      <h2 class="section-title">Work Experience</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="exp-timeline">
-      <div class="exp-card reveal-up">
-        <div class="exp-date-badge">Jan 2025 - Present</div>
-        <div class="exp-content">
-          <h3>Software Engineer</h3>
-          <span class="exp-company"><i class="fas fa-building"></i> Apple Holidays Destination Services</span>
-          <ul>
-            <li>Architected a comprehensive flight booking system using Laravel full-stack, handling complex reservation workflows and payment processing</li>
-            <li>Successfully integrated SOAP APIs with legacy airline systems, enabling seamless data exchange and real-time flight availability</li>
-            <li>Implemented AI-powered features for intelligent search recommendations and dynamic pricing optimization</li>
-            <li>Leveraged Node.js for building high-performance microservices and real-time event processing</li>
-            <li>Optimized database queries and API performance, reducing response times by 40%</li>
-            <li>Led technical discussions and mentored junior developers on best practices and code architecture</li>
+    <!-- METRICS -->
+    <section class="metrics" data-graph="dim" aria-label="Highlights">
+      <div class="container metrics-grid">
+        <div class="metric"><span class="metric-n" data-tenure="short">3y 11m</span><span class="metric-l">shipping to production</span></div>
+        <div class="metric"><span class="metric-n accent">−40%</span><span class="metric-l">API response times after query &amp; API tuning</span></div>
+        <div class="metric"><span class="metric-n">15+</span><span class="metric-l">systems &amp; products delivered</span></div>
+        <div class="metric"><span class="metric-n">Intern → SE</span><span class="metric-l">in two years, now mentoring others</span></div>
+      </div>
+    </section>
+
+    <!-- SELECTED SYSTEMS -->
+    <section id="work" class="section work" data-graph="focus" data-graph-hit>
+      <div class="container">
+        <div class="section-head no-hit">
+          <p class="eyebrow">02 / selected systems</p>
+          <h2>Problems I've owned end to end</h2>
+          <p class="section-sub">Each one as a short case study: the constraint, what I built, and what changed. The graph follows along.</p>
+        </div>
+
+        <div class="cases">
+          <article class="case no-hit" data-node="booking">
+            <div class="case-meta"><span>SYS‑01</span><span>travel · payments · Apple Holidays</span></div>
+            <h3>Flight booking platform</h3>
+            <dl class="case-body">
+              <div><dt>Constraint</dt><dd>Airline inventory lives in legacy systems that only speak SOAP, and any booking can later be voided, refunded or reissued.</dd></div>
+              <div><dt>What I built</dt><dd>Architected the platform in Laravel: reservation workflows, payment processing, dynamic invoices and passenger age rules for adults, children and infants. Node.js services handle real‑time availability and event processing.</dd></div>
+              <div><dt>Outcome</dt><dd>The full booking lifecycle, search to reissue, in one system.</dd></div>
+            </dl>
+            <ul class="tags"><li>Laravel</li><li>SOAP</li><li>Node.js</li><li>Payments</li><li>MySQL</li></ul>
+          </article>
+
+          <article class="case no-hit" data-node="discount">
+            <div class="case-meta"><span>SYS‑02</span><span>pricing · rules</span></div>
+            <h3>Discount rule engine</h3>
+            <dl class="case-body">
+              <div><dt>Constraint</dt><dd>Promotions had to combine per‑user and total usage limits, booking and travel date windows, and product, city and supplier filters.</dd></div>
+              <div><dt>What I built</dt><dd>A rule model evaluated dynamically per booking, with limit tracking and configuration from the admin side.</dd></div>
+              <div><dt>Outcome</dt><dd>New promotions are set up as rules, not new code.</dd></div>
+            </dl>
+            <ul class="tags"><li>Laravel</li><li>MySQL</li><li>Domain modelling</li></ul>
+          </article>
+
+          <article class="case no-hit" data-node="realtime">
+            <div class="case-meta"><span>SYS‑03</span><span>realtime</span></div>
+            <h3>Real‑time messaging &amp; play</h3>
+            <dl class="case-body">
+              <div><dt>Constraint</dt><dd>Three parties needed one live conversation, and a card game needed every player's moves in sync.</dd></div>
+              <div><dt>What I built</dt><dd>A 3‑way chat on Firestore with secure room‑based messaging and live search, real‑time push notifications, and a Node.js + Socket.IO server for lobbies and move sync.</dd></div>
+              <div><dt>Outcome</dt><dd>Instant updates across web and mobile.</dd></div>
+            </dl>
+            <ul class="tags"><li>Node.js</li><li>Socket.IO</li><li>Firebase</li><li>Push</li></ul>
+          </article>
+        </div>
+
+        <div class="also no-hit">
+          <p class="eyebrow">also shipped</p>
+          <div class="also-grid">
+            <div class="also-item" data-node="api"><h4>Mobile app backend</h4><p>Google, Apple, phone and password sign‑in behind a JWT + Sanctum hybrid, with modular booking, profile and notification APIs.</p></div>
+            <div class="also-item" data-node="web"><h4>Admin dashboard</h4><p>React with CoreUI and MUI, Spatie role permissions, live data tables with WebDataRocks and Tabulator.</p></div>
+            <div class="also-item" data-node="partner"><h4>Tourism inventory</h4><p>Hotel and attraction supplier APIs pulled into one inventory system.</p></div>
+            <div class="also-item" data-node="mysql"><h4>E‑commerce personalisation</h4><p>Recommendations from user behaviour, social signals for new users, and trending items.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about" data-graph="dim">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <img src="my-pic.jpg" alt="Portrait of Umayanga Vidunuwan" width="420" height="525" loading="lazy" />
+        </div>
+        <div class="about-text">
+          <p class="eyebrow">03 / about</p>
+          <h2>Backend first, with an eye for the whole product</h2>
+          <p>I've spent <span data-tenure="words">3 years 11 months</span> in production engineering, mostly in travel tech. My days are REST APIs for web and mobile, authentication, booking and pricing logic, and integrations with whatever a supplier or airline happens to run.</p>
+          <p>I care about the parts users never see: queues and jobs that keep requests fast, caching, indexes, and clean deployments on Nginx and Google Cloud. On the front end I work in React with Material UI and CoreUI.</p>
+          <p class="muted">Off screen: chess, mathematics and competitive games.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section" data-graph="dim">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">04 / git log --career</p>
+          <h2>Experience</h2>
+        </div>
+        <ol class="log">
+          <li class="log-item">
+            <div class="log-date"><span class="accent">2025.01 — present</span><span>HEAD</span></div>
+            <div class="log-body">
+              <h3>Software Engineer</h3>
+              <p class="log-co">Apple Holidays Destination Services</p>
+              <ul>
+                <li>Architected the flight booking platform in Laravel, covering reservations and payment processing.</li>
+                <li>Integrated SOAP APIs with legacy airline systems for real‑time availability.</li>
+                <li>Added AI‑assisted search recommendations and dynamic pricing.</li>
+                <li>Built Node.js microservices for real‑time event processing.</li>
+                <li>Cut API response times by 40% through query and API optimisation.</li>
+                <li>Lead technical discussions and mentor junior developers on architecture.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="log-item">
+            <div class="log-date"><span>2023.08 — 2024.12</span></div>
+            <div class="log-body">
+              <h3>Associate Software Engineer</h3>
+              <p class="log-co">Apple Holidays Destination Services</p>
+              <ul>
+                <li>Built Laravel REST APIs across several products.</li>
+                <li>Integrated hotel and attraction supplier APIs.</li>
+                <li>Built an inventory management system for tourism.</li>
+                <li>Delivered real‑time push notifications and a 3‑way chat.</li>
+                <li>Owned pull request merges and Git practices for the team.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="log-item">
+            <div class="log-date"><span>2023.01 — 2023.08</span></div>
+            <div class="log-body">
+              <h3>Intern Software Engineer</h3>
+              <p class="log-co">Block Stars (Pvt) Ltd</p>
+              <ul>
+                <li>Full‑stack Laravel apps with jQuery and AJAX.</li>
+                <li>Stripe payments and OpenAI integrations.</li>
+                <li>Database design, stand‑ups, sprint planning and code reviews.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="section" data-graph="dim">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">05 / stack</p>
+          <h2>Tools I reach for</h2>
+        </div>
+        <div class="stack-grid">
+          <div class="stack-cell"><h3>Backend</h3><p>Laravel · Node.js · REST · Sanctum / JWT · Queues &amp; jobs</p></div>
+          <div class="stack-cell"><h3>Data &amp; cloud</h3><p>MySQL · query tuning · AWS S3 · Google Cloud · Nginx · CI/CD</p></div>
+          <div class="stack-cell"><h3>Realtime &amp; integrations</h3><p>Socket.IO · Firebase · SOAP · Stripe · OpenAI</p></div>
+          <div class="stack-cell"><h3>Frontend</h3><p>React · Material UI · CoreUI · Tailwind CSS</p></div>
+          <div class="stack-cell"><h3>Languages</h3><p>PHP · JavaScript · Python · Java · C# · C</p></div>
+          <div class="stack-cell"><h3>Tools</h3><p>Git · Postman · Debugging · Unreal Engine 5</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section" data-graph="dim">
+      <div class="container">
+        <div class="contact-panel">
+          <div class="contact-copy">
+            <p class="eyebrow">06 / contact</p>
+            <h2>Have a system that needs to hold up under load?</h2>
+            <p class="muted">I'm open to senior backend and API engineering conversations.</p>
+          </div>
+          <ul class="contact-links">
+            <li>
+              <a href="mailto:uvidunuwan@gmail.com">uvidunuwan@gmail.com</a>
+              <button type="button" class="copy-btn" data-copy="uvidunuwan@gmail.com" aria-label="Copy email address">Copy</button>
+            </li>
+            <li><a href="tel:+94771192975">+94 77 119 2975</a></li>
+            <li><a href="https://www.linkedin.com/in/umayanga-vidunuwan-a8507b1a4" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a href="https://github.com/Vidunuwan" target="_blank" rel="noopener">GitHub ↗</a></li>
           </ul>
         </div>
       </div>
-      <div class="exp-card reveal-up">
-        <div class="exp-date-badge">Aug 2023 - Dec 2024</div>
-        <div class="exp-content">
-          <h3>Associate Software Engineer</h3>
-          <span class="exp-company"><i class="fas fa-building"></i> Apple Holidays Destination Services</span>
-          <ul>
-            <li>Developed RESTful APIs using Laravel for various systems</li>
-            <li>Integrated third-party APIs (hotel APIs, attraction APIs) into existing systems</li>
-            <li>Built and managed an inventory management system tailored for the tourism industry</li>
-            <li>Developed a real-time push notification system to enhance user engagement</li>
-            <li>Designed and implemented a 3-way chat application with real-time communication</li>
-            <li>Managed the merging of Git pull requests and contributed to version control best practices</li>
-          </ul>
-        </div>
-      </div>
-      <div class="exp-card reveal-up">
-        <div class="exp-date-badge">Jan 2023 - Aug 2023</div>
-        <div class="exp-content">
-          <h3>Intern Software Engineer</h3>
-          <span class="exp-company"><i class="fas fa-building"></i> Block Stars (PVT) LTD</span>
-          <ul>
-            <li>Developed full-stack web applications using Laravel framework, jQuery with AJAX</li>
-            <li>Implemented and integrated APIs, including Stripe for payment processing and OpenAI for NLP</li>
-            <li>Designed and developed the database architecture, ensuring efficient data storage and retrieval</li>
-            <li>Participated in daily stand-ups, sprint planning, and code reviews</li>
-            <li>Gained experience in team collaboration and taking on responsibilities in full-cycle development</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="section-header">
-      <span class="section-number">04</span>
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="projects-grid">
-      <article class="project-card reveal-up">
-        <div class="project-card-top">
-          <div class="project-icon"><i class="fas fa-mobile-alt"></i></div>
-          <div class="project-links"><a href="#" aria-label="View code"><i class="fas fa-code"></i></a></div>
-        </div>
-        <h3>Mobile App Backend</h3>
-        <p>Built complete authentication (Google, Apple, Phone, Password) with JWT + Sanctum hybrid protection. Modular APIs for booking, profiles, and notifications.</p>
-        <div class="project-tags"><span>Laravel</span><span>JWT</span><span>Sanctum</span><span>REST API</span></div>
-      </article>
-      <article class="project-card reveal-up">
-        <div class="project-card-top">
-          <div class="project-icon"><i class="fas fa-comments"></i></div>
-          <div class="project-links"><a href="#" aria-label="View code"><i class="fas fa-code"></i></a></div>
-        </div>
-        <h3>Real-Time Chat System</h3>
-        <p>Implemented Firestore real-time chat with live search conversations, secure room-based messaging, and instant updates.</p>
-        <div class="project-tags"><span>Laravel</span><span>Firebase</span><span>Firestore</span><span>Real-time</span></div>
-      </article>
-      <article class="project-card reveal-up">
-        <div class="project-card-top">
-          <div class="project-icon"><i class="fas fa-shopping-bag"></i></div>
-          <div class="project-links"><a href="#" aria-label="View code"><i class="fas fa-code"></i></a></div>
-        </div>
-        <h3>E-Commerce Personalization</h3>
-        <p>Product suggestions using user behavior patterns. Designed logic for new users based on social behavior. Trending item recommendations.</p>
-        <div class="project-tags"><span>Laravel</span><span>Recommendation</span><span>MySQL</span></div>
-      </article>
-      <article class="project-card reveal-up">
-        <div class="project-card-top">
-          <div class="project-icon"><i class="fas fa-plane"></i></div>
-          <div class="project-links"><a href="#" aria-label="View code"><i class="fas fa-code"></i></a></div>
-        </div>
-        <h3>Flight Booking System</h3>
-        <p>Booking, void, refund, and reissue workflow logic. Dynamic invoice generation. Age validations for adults/children/infants.</p>
-        <div class="project-tags"><span>Laravel</span><span>SOAP API</span><span>Business Logic</span></div>
-      </article>
-      <article class="project-card reveal-up">
-        <div class="project-card-top">
-          <div class="project-icon"><i class="fas fa-gamepad"></i></div>
-          <div class="project-links"><a href="#" aria-label="View code"><i class="fas fa-code"></i></a></div>
-        </div>
-        <h3>Multiplayer Card Game</h3>
-        <p>Game movement synchronization using Node.js and Socket.IO. Lobby system with real-time card interactions.</p>
-        <div class="project-tags"><span>Node.js</span><span>Socket.IO</span><span>Real-time</span></div>
-      </article>
-      <article class="project-card reveal-up">
-        <div class="project-card-top">
-          <div class="project-icon"><i class="fas fa-tags"></i></div>
-          <div class="project-links"><a href="#" aria-label="View code"><i class="fas fa-code"></i></a></div>
-        </div>
-        <h3>Discount Rule Engine</h3>
-        <p>Complex discount system with per-user limits, total limits, booking/travel date rules, product, city, supplier filters, and dynamic rule evaluation.</p>
-        <div class="project-tags"><span>Laravel</span><span>Business Logic</span><span>MySQL</span></div>
-      </article>
-      <article class="project-card reveal-up">
-        <div class="project-card-top">
-          <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-          <div class="project-links"><a href="#" aria-label="View code"><i class="fas fa-code"></i></a></div>
-        </div>
-        <h3>Admin Dashboard</h3>
-        <p>Custom React components with role-based access control (Spatie Permission). Integrated live data tables (WebDataRocks, Tabulator).</p>
-        <div class="project-tags"><span>React</span><span>CoreUI</span><span>Material UI</span><span>Laravel</span></div>
-      </article>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="section-header">
-      <span class="section-number">05</span>
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info reveal-left">
-        <h3>Let's Build Something Together</h3>
-        <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out if you'd like to collaborate or just have a chat about technology!</p>
-        <div class="contact-links">
-          <a href="tel:+94771192975" class="contact-link-item">
-            <div class="contact-link-icon"><i class="fas fa-phone"></i></div>
-            <div><span class="contact-link-label">Phone</span><span class="contact-link-value">+94 77 1192 975</span></div>
-          </a>
-          <a href="mailto:uvidunuwan@gmail.com" class="contact-link-item">
-            <div class="contact-link-icon"><i class="fas fa-envelope"></i></div>
-            <div><span class="contact-link-label">Email</span><span class="contact-link-value">uvidunuwan@gmail.com</span></div>
-          </a>
-          <div class="contact-link-item">
-            <div class="contact-link-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div><span class="contact-link-label">Location</span><span class="contact-link-value">Nugegoda, Sri Lanka</span></div>
-          </div>
-          <a href="https://www.linkedin.com/in/umayanga-vidunuwan-a8507b1a4" target="_blank" class="contact-link-item">
-            <div class="contact-link-icon"><i class="fab fa-linkedin-in"></i></div>
-            <div><span class="contact-link-label">LinkedIn</span><span class="contact-link-value">Umayanga vidunuwan</span></div>
-          </a>
-        </div>
-      </div>
-      <form class="contact-form reveal-right" id="contactForm">
-        <div class="form-row">
-          <div class="form-group">
-            <input type="text" id="name" name="name" required placeholder=" " />
-            <label for="name">Your Name</label>
-          </div>
-          <div class="form-group">
-            <input type="email" id="email" name="email" required placeholder=" " />
-            <label for="email">Your Email</label>
-          </div>
-        </div>
-        <div class="form-group">
-          <input type="text" id="subject" name="subject" required placeholder=" " />
-          <label for="subject">Subject</label>
-        </div>
-        <div class="form-group">
-          <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
-          <label for="message">Message</label>
-        </div>
-        <button type="submit" class="btn btn-primary btn-submit">
-          <span>Send Message</span>
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="logo-bracket">&lt;</span>UV<span class="logo-bracket"> /&gt;</span>
-      </div>
-      <div class="footer-socials">
-        <a href="mailto:uvidunuwan@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        <a href="tel:+94771192975" aria-label="Phone"><i class="fas fa-phone"></i></a>
-        <a href="https://www.linkedin.com/in/umayanga-vidunuwan-a8507b1a4" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/Vidunuwan" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      </div>
-      <p class="footer-copy">&copy; 2025 Umayanga Vidunuwan. Crafted with code.</p>
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Umayanga Vidunuwan</span>
+      <span>Nugegoda, Sri Lanka · built with three.js</span>
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
-  <script>
-    /* Particle Canvas */
-    (function() {
-      var canvas = document.getElementById('particleCanvas');
-      var ctx = canvas.getContext('2d');
-      var particles = [];
-      var PARTICLE_COUNT = 80;
-      var CONNECT_DIST = 120;
-
-      function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-      window.addEventListener('resize', resize);
-      resize();
-
-      function Particle() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
-        this.r = Math.random() * 2 + 0.5;
-      }
-      Particle.prototype.update = function() {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-      };
-      Particle.prototype.draw = function() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 255, 136, 0.5)';
-        ctx.fill();
-      };
-
-      for (var i = 0; i < PARTICLE_COUNT; i++) particles.push(new Particle());
-
-      function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (var p = 0; p < particles.length; p++) {
-          particles[p].update();
-          particles[p].draw();
-        }
-        for (var a = 0; a < particles.length; a++) {
-          for (var b = a + 1; b < particles.length; b++) {
-            var dx = particles[a].x - particles[b].x;
-            var dy = particles[a].y - particles[b].y;
-            var dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < CONNECT_DIST) {
-              ctx.beginPath();
-              ctx.moveTo(particles[a].x, particles[a].y);
-              ctx.lineTo(particles[b].x, particles[b].y);
-              ctx.strokeStyle = 'rgba(0,255,136,' + (0.15 * (1 - dist / CONNECT_DIST)) + ')';
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
-          }
-        }
-        requestAnimationFrame(animate);
-      }
-      animate();
-    })();
-
-    /* Cursor Glow */
-    (function() {
-      var glow = document.getElementById('cursorGlow');
-      if (window.matchMedia('(pointer: fine)').matches) {
-        document.addEventListener('mousemove', function(e) {
-          glow.style.transform = 'translate(' + (e.clientX - 200) + 'px, ' + (e.clientY - 200) + 'px)';
-        });
-      }
-    })();
-
-    /* Scroll Progress */
-    (function() {
-      var bar = document.getElementById('scrollProgress');
-      window.addEventListener('scroll', function() {
-        var scrollTop = window.scrollY;
-        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        bar.style.width = ((scrollTop / docHeight) * 100) + '%';
-      });
-    })();
-
-    /* Navbar scroll + active link */
-    (function() {
-      var nav = document.getElementById('navbar');
-      var links = document.querySelectorAll('.nav-link');
-      var sections = document.querySelectorAll('section');
-
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-          nav.classList.add('scrolled');
-        } else {
-          nav.classList.remove('scrolled');
-        }
-        var current = '';
-        sections.forEach(function(s) {
-          if (window.scrollY >= s.offsetTop - 200) current = s.id;
-        });
-        links.forEach(function(l) {
-          if (l.dataset.section === current) {
-            l.classList.add('active');
-          } else {
-            l.classList.remove('active');
-          }
-        });
-      });
-    })();
-
-    /* Mobile Menu */
-    (function() {
-      var hamburger = document.getElementById('hamburger');
-      var navLinks = document.getElementById('navLinks');
-      hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('open');
-        navLinks.classList.toggle('mobile-open');
-      });
-      navLinks.querySelectorAll('a').forEach(function(link) {
-        link.addEventListener('click', function() {
-          hamburger.classList.remove('open');
-          navLinks.classList.remove('mobile-open');
-        });
-      });
-    })();
-
-    /* Typing Animation */
-    (function() {
-      var roles = ['Software Engineer', 'Backend Developer', 'API Architect', 'Problem Solver'];
-      var el = document.getElementById('heroRole');
-      var roleIdx = 0, charIdx = 0, deleting = false;
-
-      function typeChar() {
-        var current = roles[roleIdx];
-        if (!deleting) {
-          el.textContent = current.substring(0, charIdx + 1);
-          charIdx++;
-          if (charIdx === current.length) { deleting = true; setTimeout(typeChar, 1800); return; }
-        } else {
-          el.textContent = current.substring(0, charIdx - 1);
-          charIdx--;
-          if (charIdx === 0) { deleting = false; roleIdx = (roleIdx + 1) % roles.length; }
-        }
-        setTimeout(typeChar, deleting ? 40 : 90);
-      }
-      typeChar();
-    })();
-
-    /* Reveal-on-scroll */
-    (function() {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-        });
-      }, { threshold: 0.15 });
-      document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .skill-category, .exp-card, .project-card').forEach(function(el) { observer.observe(el); });
-    })();
-
-    /* Stat Counter */
-    (function() {
-      var counters = document.querySelectorAll('.stat-number');
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) {
-            var target = parseInt(e.target.dataset.count);
-            var count = 0;
-            var step = Math.ceil(target / 40);
-            var timer = setInterval(function() {
-              count += step;
-              if (count >= target) { count = target; clearInterval(timer); }
-              e.target.textContent = count;
-            }, 40);
-            observer.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.5 });
-      counters.forEach(function(c) { observer.observe(c); });
-    })();
-
-    /* Contact Form */
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var fd = new FormData(e.target);
-      var mailtoLink = 'mailto:uvidunuwan@gmail.com?subject=' + encodeURIComponent(fd.get('subject')) + '&body=' + encodeURIComponent('From: ' + fd.get('name') + ' (' + fd.get('email') + ')\n\n' + fd.get('message'));
-      window.location.href = mailtoLink;
-      e.target.reset();
-    });
-
-    /* Smooth scroll */
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-      a.addEventListener('click', function(e) {
-        e.preventDefault();
-        var target = document.querySelector(a.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
+  <script src="js/site.js" defer></script>
+  <script type="module" src="js/system-graph.js"></script>
 </body>
 </html>
